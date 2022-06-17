@@ -1,0 +1,11 @@
+{
+  "banners": [
+    {
+      "id": 1,
+      "image": "",
+      "name": "Marvel",
+      "button-text": "Texto del botón",
+      "modal-text": "Texto de modal"
+    }
+  ]
+}
