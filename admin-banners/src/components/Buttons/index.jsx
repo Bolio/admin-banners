@@ -2,13 +2,13 @@ import styled, { css } from "styled-components";
 
 const ButtonStyled = styled.button`
   display: block;
-  width: 100px;
+  width: ${({ width }) => (width ? width : "100px")};
   height: 50px;
   background-color: pink;
 `;
 
-const Button = ({ children }) => {
-  return <ButtonStyled>{children}</ButtonStyled>;
+const Button = ({ children, width }) => {
+  return <ButtonStyled width={width}>{children}</ButtonStyled>;
 };
 
 export default Button;

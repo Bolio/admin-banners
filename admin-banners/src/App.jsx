@@ -8,6 +8,7 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 
 import CurrentBanners from "./pages/CurrentBanners";
+import AddBanner from "./components/AddBanner";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -69,6 +70,7 @@ function App() {
                 </TabPanel>
                 <TabPanel value={value} index={1}>
                   Agregar Banner
+                  <AddBanner />
                 </TabPanel>
                 <TabPanel value={value} index={2}>
                   Banners Anteriores
