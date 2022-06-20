@@ -7,9 +7,9 @@ const ButtonStyled = styled.button`
   background-color: pink;
 `;
 
-const Button = ({ children, width, onClick }) => {
+const Button = ({ children, width, onClick, type }) => {
   return (
-    <ButtonStyled onClick={onClick} width={width}>
+    <ButtonStyled onClick={onClick} width={width} type={type}>
       {children}
     </ButtonStyled>
   );

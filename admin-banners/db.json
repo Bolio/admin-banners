@@ -34,6 +34,19 @@
       "name": "Marvel 5",
       "button-text": "Texto del botón",
       "modal-text": "Texto de modal"
+    },
+    {
+      "name_banner": "Prueba #1",
+      "link_banner": "Sin link",
+      "text_banner": "Textoooo!Botón!!!!",
+      "id": 6
+    },
+    {
+      "name_banner": "Prueba #2",
+      "link_banner": "Sin link2",
+      "text_banner": "Textoooo!Botón!!!!2",
+      "img_banner": "C:\\fakepath\\banner43.jpeg",
+      "id": 7
     }
   ]
 }
