@@ -48,8 +48,6 @@ const ContainerButtonsStyled = styled.div`
 `;
 
 const MyComponent = ({ field, form, ...props }) => {
-  console.log("field", field);
-  console.log("props", props);
   return InputText({ field, form, props });
 };
 
@@ -85,6 +83,11 @@ const AddBanner = () => {
       <Formik
         initialValues={initialValues}
         onSubmit={(values) => {
+          if (values?.img_banner) {
+            const img = values?.img_banner.split("\\");
+            const banner = img[img.length - 1];
+            values.img_banner = `src/assets/banners/${banner}`;
+          }
           addBanner(values);
         }}
       >
@@ -95,6 +98,7 @@ const AddBanner = () => {
                 id="img_banner"
                 name="img_banner"
                 type="file"
+                accept="image/png, .jpeg, .jpg, image/gif"
                 component={MyComponent}
               />
 

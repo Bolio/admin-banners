@@ -47,6 +47,34 @@
       "text_banner": "Textoooo!Botón!!!!2",
       "img_banner": "C:\\fakepath\\banner43.jpeg",
       "id": 7
+    },
+    {
+      "img_banner": "C:\\fakepath\\banner44.jpeg",
+      "name_banner": "",
+      "link_banner": "",
+      "text_banner": "",
+      "id": 8
+    },
+    {
+      "img_banner": "src/assets/banners/banner44.jpeg",
+      "name_banner": "",
+      "link_banner": "",
+      "text_banner": "",
+      "id": 9
+    },
+    {
+      "img_banner": "src/assets/banners/banner10.png",
+      "name_banner": "BANNER#10",
+      "link_banner": "",
+      "text_banner": "",
+      "id": 10
+    },
+    {
+      "img_banner": "src/assets/banners/banner42.jpeg",
+      "name_banner": "",
+      "link_banner": "",
+      "text_banner": "",
+      "id": 11
     }
   ]
 }
