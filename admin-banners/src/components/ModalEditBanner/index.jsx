@@ -45,11 +45,11 @@ const ContainerButtonsStyled = styled.div`
   background-color: blue;
 `;
 
-const ModalEditBanner = () => {
+const ModalEditBanner = ({ img, title }) => {
   return (
     <ContainerModalEditBannerStyled>
       <Typography align="center" variant="h5" gutterBottom>
-        Detalle de banner {"FCBD-2022"}
+        Detalle de banner {title}
       </Typography>
 
       <InputFileModalEditBannerStyled type="file" />

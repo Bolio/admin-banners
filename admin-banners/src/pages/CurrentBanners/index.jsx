@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import styled, { css } from "styled-components";
 
 import CurrentBanner from "../../components/CurrentBanner";
@@ -15,63 +16,20 @@ const ContainerBannersStyled = styled.div`
 `;
 
 const CurrentBanners = ({}) => {
+  const [banners, setBanners] = useState([]);
+  useEffect(() => {
+    fetch("http://localhost:4000/banners")
+      .then((response) => response.json())
+      .then((data) => setBanners(data));
+  }, []);
+
+  console.log(" banners:", banners);
+
   return (
     <ContainerBannersStyled>
-      <CurrentBanner />
-      <CurrentBanner />
-      <CurrentBanner />
-      <CurrentBanner />
-      <CurrentBanner />
-      <CurrentBanner />
-      <CurrentBanner />
-      <CurrentBanner />
-      <CurrentBanner />
-      <CurrentBanner />
-      <CurrentBanner />
-      <CurrentBanner />
-      <CurrentBanner />
-      <CurrentBanner />
-      <CurrentBanner />
-      <CurrentBanner />
-      <CurrentBanner />
-      <CurrentBanner />
-      <CurrentBanner />
-      <CurrentBanner />
-      <CurrentBanner />
-      <CurrentBanner />
-      <CurrentBanner />
-      <CurrentBanner />
-      <CurrentBanner />
-      <CurrentBanner />
-      <CurrentBanner />
-      <CurrentBanner />
-      <CurrentBanner />
-      <CurrentBanner />
-      <CurrentBanner />
-      <CurrentBanner />
-      <CurrentBanner />
-      <CurrentBanner />
-      <CurrentBanner />
-      <CurrentBanner />
-      <CurrentBanner />
-      <CurrentBanner />
-      <CurrentBanner />
-      <CurrentBanner />
-      <CurrentBanner />
-      <CurrentBanner />
-      <CurrentBanner />
-      <CurrentBanner />
-      <CurrentBanner />
-      <CurrentBanner />
-      <CurrentBanner />
-      <CurrentBanner />
-      <CurrentBanner />
-      <CurrentBanner />
-      <CurrentBanner />
-      <CurrentBanner />
-      <CurrentBanner />
-      <CurrentBanner />
-      <CurrentBanner />
+      {banners?.map((banner) => (
+        <CurrentBanner img={banner.image} title={banner.name} />
+      ))}
     </ContainerBannersStyled>
   );
 };

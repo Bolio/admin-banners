@@ -57,15 +57,15 @@ const style = {
   p: 4,
 };
 
-const CurrentBanner = () => {
+const CurrentBanner = ({ img, title }) => {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
   return (
     <ContainerBannerStyled>
-      <ImgBannerStyled />
-      <NameBannerStyled>FCBD-2022</NameBannerStyled>
+      <ImgBannerStyled src={img} />
+      <NameBannerStyled>{title}</NameBannerStyled>
       <ContainerButtonsStyled>
         <Button onClick={() => handleOpen()}>Editar</Button>
         <Button>Eliminar</Button>
@@ -79,7 +79,7 @@ const CurrentBanner = () => {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          <ModalEditBanner />
+          <ModalEditBanner img={img} title={title} />
         </Box>
       </Modal>
     </ContainerBannerStyled>
