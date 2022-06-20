@@ -65,11 +65,11 @@ function App() {
                   </Tabs>
                 </Box>
                 <TabPanel value={value} index={0}>
-                  Banners Actuales
+                  {/* Banners Actuales */}
                   <CurrentBanners />
                 </TabPanel>
                 <TabPanel value={value} index={1}>
-                  Agregar Banner
+                  {/* Agregar Banner */}
                   <AddBanner />
                 </TabPanel>
                 <TabPanel value={value} index={2}>
