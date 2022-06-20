@@ -2,8 +2,36 @@
   "banners": [
     {
       "id": 1,
-      "image": "",
-      "name": "Marvel",
+      "image": "src/assets/banners/banner44.jpeg",
+      "name": "Marvel 1",
+      "button-text": "Texto del botón",
+      "modal-text": "Texto de modal"
+    },
+    {
+      "id": 2,
+      "image": "src/assets/banners/banner43.jpeg",
+      "name": "Marvel 2",
+      "button-text": "Texto del botón",
+      "modal-text": "Texto de modal"
+    },
+    {
+      "id": 3,
+      "image": "src/assets/banners/banner42.jpeg",
+      "name": "Marvel 3",
+      "button-text": "Texto del botón",
+      "modal-text": "Texto de modal"
+    },
+    {
+      "id": 4,
+      "image": "src/assets/banners/banner41.jpeg",
+      "name": "Marvel 4",
+      "button-text": "Texto del botón",
+      "modal-text": "Texto de modal"
+    },
+    {
+      "id": 5,
+      "image": "src/assets/banners/banner10.png",
+      "name": "Marvel 5",
       "button-text": "Texto del botón",
       "modal-text": "Texto de modal"
     }
