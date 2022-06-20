@@ -28,7 +28,7 @@ const CurrentBanners = ({}) => {
   return (
     <ContainerBannersStyled>
       {banners?.map((banner) => (
-        <CurrentBanner img={banner.image} title={banner.name} />
+        <CurrentBanner img={banner.img_banner} title={banner.name_banner} />
       ))}
     </ContainerBannersStyled>
   );
