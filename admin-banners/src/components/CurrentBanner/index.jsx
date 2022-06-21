@@ -57,6 +57,21 @@ const style = {
   p: 4,
 };
 
+const deleteBanner = async (idBanner) => {
+  try {
+    const url = `http://localhost:4000/banners/${idBanner}`;
+
+    const request = await fetch(url, {
+      method: "DELETE",
+    });
+    console.log(request);
+    const result = await request.json();
+    console.log(result);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 const CurrentBanner = ({ idBanner, img, title, linkBanner, textBanner }) => {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
@@ -68,7 +83,7 @@ const CurrentBanner = ({ idBanner, img, title, linkBanner, textBanner }) => {
       <NameBannerStyled>{title}</NameBannerStyled>
       <ContainerButtonsStyled>
         <Button onClick={() => handleOpen()}>Editar</Button>
-        <Button>Eliminar</Button>
+        <Button onClick={() => deleteBanner(idBanner)}>Eliminar</Button>
       </ContainerButtonsStyled>
 
       {/* <ModalCustom idModal="modal-edit-banner" isOpen={isOpen} /> */}

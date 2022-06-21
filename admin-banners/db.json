@@ -29,20 +29,6 @@
       "link_banner": "Texto de modal"
     },
     {
-      "id": 5,
-      "img_banner": "src/assets/banners/banner10.png",
-      "name_banner": "Marvel 5",
-      "text_banner": "Texto del botón",
-      "link_banner": "Texto de modal"
-    },
-    {
-      "img_banner": "src/assets/banners/banner44.jpeg",
-      "name_banner": "",
-      "link_banner": "",
-      "text_banner": "",
-      "id": 9
-    },
-    {
       "img_banner": "src/assets/banners/banner10.png",
       "name_banner": "BANNER#19",
       "link_banner": "link de pruebaaaA",
