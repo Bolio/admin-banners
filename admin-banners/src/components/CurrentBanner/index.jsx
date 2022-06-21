@@ -57,7 +57,7 @@ const style = {
   p: 4,
 };
 
-const CurrentBanner = ({ img, title }) => {
+const CurrentBanner = ({ idBanner, img, title, linkBanner, textBanner }) => {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -79,7 +79,13 @@ const CurrentBanner = ({ img, title }) => {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          <ModalEditBanner img={img} title={title} />
+          <ModalEditBanner
+            idBanner={idBanner}
+            img={img}
+            title={title}
+            linkBanner={linkBanner}
+            textBanner={textBanner}
+          />
         </Box>
       </Modal>
     </ContainerBannerStyled>

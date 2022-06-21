@@ -1,7 +1,9 @@
 import styled, { css } from "styled-components";
 import Typography from "@mui/material/Typography";
+import { Formik, Form, Field } from "formik";
 
 import Button from "../Buttons";
+import InputText from "../AddBanner/InputText";
 
 const ContainerModalEditBannerStyled = styled.div`
   display: flex;
@@ -45,35 +47,93 @@ const ContainerButtonsStyled = styled.div`
   background-color: blue;
 `;
 
-const ModalEditBanner = ({ img, title }) => {
+const MyComponent = ({ field, form, ...props }) => {
+  return InputText({ field, form, props });
+};
+
+const ModalEditBanner = ({ idBanner, img, title, linkBanner, textBanner }) => {
+  const initialValues = {
+    img_banner: img || "",
+    name_banner: title || "",
+    link_banner: linkBanner || "",
+    text_banner: textBanner || "",
+  };
+
+  const editBanner = async (values, idBanner) => {
+    try {
+      const url = `http://localhost:4000/banners/${idBanner}`;
+
+      const request = await fetch(url, {
+        method: "PUT",
+        body: JSON.stringify(values),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      console.log(request);
+      const result = await request.json();
+      console.log(result);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <ContainerModalEditBannerStyled>
       <Typography align="center" variant="h5" gutterBottom>
         Detalle de banner {title}
       </Typography>
 
-      <InputFileModalEditBannerStyled type="file" />
+      <Formik
+        initialValues={initialValues}
+        onSubmit={(values) => {
+          console.log("values", values);
+          editBanner(values, idBanner);
+        }}
+      >
+        <Form>
+          {/* <Field
+            id="img_banner"
+            name="img_banner"
+            type="file"
+            accept="image/png, .jpeg, .jpg, image/gif"
+            component={MyComponent}
+          /> */}
 
-      <InputTextModalEditBannerStyled
-        type="text"
-        placeholder="Nombre del banner"
-      />
-      <InputTextModalEditBannerStyled
-        type="text"
-        placeholder="Link del banner"
-      />
-      <InputTextModalEditBannerStyled
-        type="text"
-        placeholder="Texto del botón"
-      />
-      <InputTextModalEditBannerStyled
-        type="text"
-        placeholder="Texto de modal"
-      />
+          <Field
+            id="name_banner"
+            name="name_banner"
+            type="text"
+            placeholder="Nombre del banner"
+            component={MyComponent}
+          />
+          <Field
+            id="link_banner"
+            name="link_banner"
+            type="text"
+            placeholder="Link del banner"
+            component={MyComponent}
+          />
+          <Field
+            id="text_banner"
+            name="text_banner"
+            type="text"
+            placeholder="Texto del botón"
+            component={MyComponent}
+          />
+          {/* <Field
+            type="text"
+            placeholder="Texto de modal"
+            component={MyComponent}
+          /> */}
 
-      <ContainerButtonsStyled>
-        <Button width="200px">Actualizar Banner</Button>
-      </ContainerButtonsStyled>
+          <ContainerButtonsStyled>
+            <Button type="submit" width="200px">
+              Actualizar Banner
+            </Button>
+          </ContainerButtonsStyled>
+        </Form>
+      </Formik>
     </ContainerModalEditBannerStyled>
   );
 };
